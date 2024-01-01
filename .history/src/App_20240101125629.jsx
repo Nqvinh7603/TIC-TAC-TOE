@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-undef */
 import React from "react";
 import "./App.css";
-import Game from "./Game";
+import "./Game";
 const App = () => {
   return (
     <div>
