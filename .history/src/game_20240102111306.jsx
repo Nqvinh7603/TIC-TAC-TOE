@@ -18,7 +18,6 @@ const Game = () => {
   return (
     <div>
       <Board cells={board} onClick={handleClick}></Board>
-      {winner ? `Người chiến thắng là ${xIsNext ? "O" : "X"}` : ""}
     </div>
   );
 };
