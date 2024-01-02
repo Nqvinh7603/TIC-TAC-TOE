@@ -16,13 +16,12 @@ const Game = () => {
     setXIsNext((xIsNext) => !xIsNext);
   };
   const handleResetGame = () => {
-    setBoard(Array(9).fill(null));
-    setXIsNext(true);
+    setBoard;
   };
   return (
     <div>
       <Board cells={board} onClick={handleClick}></Board>
-      <button onClick={handleResetGame}>Reset</button>
+      <button onClick={handleResetGame}></button>
     </div>
   );
 };

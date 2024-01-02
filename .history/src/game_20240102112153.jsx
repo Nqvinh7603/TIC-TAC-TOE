@@ -17,7 +17,6 @@ const Game = () => {
   };
   const handleResetGame = () => {
     setBoard(Array(9).fill(null));
-    setXIsNext(true);
   };
   return (
     <div>

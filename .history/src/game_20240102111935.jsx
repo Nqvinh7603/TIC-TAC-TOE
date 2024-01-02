@@ -13,16 +13,12 @@ const Game = () => {
     }
     boardCopy[index] = xIsNext ? "X" : "O";
     setBoard(boardCopy);
-    setXIsNext((xIsNext) => !xIsNext);
-  };
-  const handleResetGame = () => {
-    setBoard(Array(9).fill(null));
-    setXIsNext(true);
+    setXIsNext((xIsNext) => );
   };
   return (
     <div>
       <Board cells={board} onClick={handleClick}></Board>
-      <button onClick={handleResetGame}>Reset</button>
+      {winner ? `Người chiến thắng là ${xIsNext ? "O" : "X"}` : ""}
     </div>
   );
 };
