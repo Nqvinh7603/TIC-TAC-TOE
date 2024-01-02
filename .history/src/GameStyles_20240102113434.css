@@ -25,15 +25,10 @@
 .game-reset {
   margin: 25px;
   display: inline-block;
-  padding: 15px 20px;
+  padding: 10px 20px;
   color: white;
   background-color: #6a5af9;
   font-size: 16px;
   border: none;
   outline: none;
-}
-.game-winner {
-  padding: 25px;
-  font-size: 20px;
-  color: #f62682;
 }

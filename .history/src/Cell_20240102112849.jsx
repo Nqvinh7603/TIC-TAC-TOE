@@ -3,7 +3,7 @@ import React from "react";
 
 const Cell = ({ value, onClick, className }) => {
   return (
-    <div className={`game-cell ${className}`} onClick={onClick}>
+    <div className={`game-cell ${game - cell}`} onClick={onClick}>
       {value}
     </div>
   );

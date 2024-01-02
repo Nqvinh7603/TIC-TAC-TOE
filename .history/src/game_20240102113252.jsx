@@ -22,10 +22,6 @@ const Game = () => {
   return (
     <div>
       <Board cells={board} onClick={handleClick}></Board>
-      {winner && (
-        <div className="game-winner">Người chiến thắng là {winner}</div>
-      )}
-
       <button onClick={handleResetGame} className="game-reset">
         Reset
       </button>
