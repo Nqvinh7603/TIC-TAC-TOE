@@ -2,6 +2,38 @@ import React, { useState } from "react";
 import Board from "./Board";
 import "./GameStyles.css";
 import { calculateWinner } from "./helper";
+// const Game = () => {
+//   const [board, setBoard] = useState(Array(9).fill(null));
+//   const [xIsNext, setXIsNext] = useState(true);
+//   const winner = calculateWinner(board);
+//   const handleClick = (index) => {
+//     const boardCopy = [...board];
+//     if (winner || boardCopy[index]) {
+//       return;
+//     }
+//     boardCopy[index] = xIsNext ? "X" : "O";
+//     setBoard(boardCopy);
+//     setXIsNext((xIsNext) => !xIsNext);
+//   };
+//   const handleResetGame = () => {
+//     setBoard(Array(9).fill(null));
+//     setXIsNext(true);
+//   };
+//   return (
+//     <div>
+//       <Board cells={board} onClick={handleClick}></Board>
+//       {winner && (
+//         <div className="game-winner">Người chiến thắng là {winner}</div>
+//       )}
+
+//       <button onClick={handleResetGame} className="game-reset">
+//         Reset
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default Game;
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
@@ -17,9 +49,12 @@ const Game = () => {
     setBoard(newBoard);
     setXIsNext(!xIsNext);
 
-    if (isSinglePlayer && !winner && xIsNext) {
+    if (isSinglePlayer && !winner && !xIsNext) {
       setTimeout(() => {
-        makeAIMove(newBoard);
+        if (!xIsNext) {
+          // Thêm điều kiện để chỉ gọi makeAIMove khi đến lượt của máy
+          makeAIMove(newBoard); // Truyền newBoard thay vì board để tránh việc thay đổi trực tiếp giá trị của board
+        }
       }, 500);
     }
   };
@@ -109,7 +144,6 @@ const Game = () => {
   };
 
   return (
-    // Trong JSX
     <div>
       <Board cells={board} onClick={handleClick}></Board>
       {winner && (
@@ -119,12 +153,8 @@ const Game = () => {
       <button onClick={handleResetGame} className="game-reset">
         Reset
       </button>
-      <button
-        className={`mode-toggle ${
-          isSinglePlayer ? "single-player" : "multiplayer"
-        }`}
-        onClick={toggleSinglePlayerMode}
-      >
+
+      <button onClick={toggleSinglePlayerMode} className="toggle-mode">
         {isSinglePlayer ? "Chơi với người khác" : "Chơi với máy"}
       </button>
     </div>
