@@ -12,8 +12,6 @@ const Game = () => {
       return;
     }
     boardCopy[index] = xIsNext ? "X" : "O";
-    setBoard(boardCopy);
-    setXIsNext(!xIsNext);
   };
   return (
     <div>

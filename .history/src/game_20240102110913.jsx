@@ -11,9 +11,10 @@ const Game = () => {
     if (winner || boardCopy[index]) {
       return;
     }
-    boardCopy[index] = xIsNext ? "X" : "O";
-    setBoard(boardCopy);
-    setXIsNext(!xIsNext);
+    boardCopy[index] = xIsNext ? 'X' : 'var offset = $(selector).offset();
+    var top = offset.top;
+    var left = offset.left;
+    ';
   };
   return (
     <div>
